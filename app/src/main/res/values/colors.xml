@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores principales similares a proyecto de plataformas de desarrollo -->
+    <color name="green_100">#DCFCE7</color>
+    <color name="emerald_800">#065F46</color>
+
+    <!-- Colores default -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
