@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
         String name = editTextPlantName.getText().toString().trim();
         String type = editTextPlantType.getText().toString().trim();
         String price = editTextPlantPrice.getText().toString().trim();
-
-        Log.e("MainActivity", "Nombre: " + name + ", Tipo: " + type + ", Precio: " + price);
+        // Log.e("MainActivity", "Nombre: " + name + ", Tipo: " + type + ", Precio: " + price);
 
         // Verificar si estan vacios
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(type) || TextUtils.isEmpty(price)) {
-            //TODO: Generar advertencia al usuario
+            // Log.e("MainActivity", "Error: Campos vacíos");
+            Toast.makeText(this, R.string.mje_error_campo_vacio, Toast.LENGTH_SHORT).show();
             return;
         }
         

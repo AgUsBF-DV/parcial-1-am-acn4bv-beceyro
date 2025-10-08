@@ -13,4 +13,7 @@
     <string name="placeholder_tipo">Tipo</string>
     <string name="placeholder_precio">Precio</string>
     <string name="btn_agregar">Agregar</string>
+
+    <!-- Otros -->
+    <string name="mje_error_campo_vacio">Por favor, complete todos los campos.</string>
 </resources>
