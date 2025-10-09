@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Campos/Elementos
     private EditText editTextPlantName;
-    private EditText editTextPlantType;
+    private AutoCompleteTextView editTextPlantType;
     private EditText editTextPlantPrice;
     private Button buttonAddProduct;
     private LinearLayout productsContainer;
@@ -33,7 +35,21 @@ public class MainActivity extends AppCompatActivity {
         editTextPlantPrice = findViewById(R.id.editTextPlantPrice);
         buttonAddProduct = findViewById(R.id.buttonAddProduct);
         productsContainer = findViewById(R.id.products_container);
-
+        // Configurar opciones del dropdown
+        String[] tipos = {"Planta de interior", "Planta de exterior", "Insumo", "Herramienta"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, tipos);
+        editTextPlantType.setAdapter(adapter);
+        // Deshabilita teclado
+        editTextPlantType.setInputType(0);
+        // Forzar apertura del dropdown al hacer click
+        editTextPlantType.setFocusable(false);
+        // Listener del dropdown
+        editTextPlantType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextPlantType.showDropDown();
+            }
+        });
         // Listener del boton
         buttonAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override

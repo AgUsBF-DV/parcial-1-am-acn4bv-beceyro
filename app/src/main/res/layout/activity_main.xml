@@ -72,35 +72,41 @@
             android:id="@+id/editTextPlantName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:backgroundTint="@color/emerald_800"
             android:hint="@string/placeholder_nombre"
             android:inputType="textPersonName"
-            android:textColorHint="@color/emerald_800" />
+            android:textColorHint="@color/emerald_800"
+            tools:minHeight="50dp" />
 
-        <!-- Campo tipo -->
-        <EditText
+        <!-- Campo tipo (Dropdown) -->
+        <AutoCompleteTextView
             android:id="@+id/editTextPlantType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/placeholder_tipo"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"
-            android:textColorHint="@color/emerald_800"
+            android:layout_marginBottom="4dp"
             android:backgroundTint="@color/emerald_800"
-        />
+            android:drawableEnd="@drawable/ic_arrow_drop_down"
+            android:dropDownWidth="match_parent"
+            android:dropDownHeight="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/placeholder_tipo"
+            android:inputType="none"
+            android:minHeight="50dp"
+            android:paddingEnd="6dp"
+            android:textColorHint="@color/emerald_800" />
 
         <!-- Campo precio -->
         <EditText
             android:id="@+id/editTextPlantPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/emerald_800"
             android:hint="@string/placeholder_precio"
             android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp"
-            android:textColorHint="@color/emerald_800"
-            android:backgroundTint="@color/emerald_800"
-        />
+            android:minHeight="50dp"
+            android:textColorHint="@color/emerald_800" />
 
         <!-- Botón -->
         <Button
