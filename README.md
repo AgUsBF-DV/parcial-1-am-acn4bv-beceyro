@@ -10,6 +10,12 @@ Desarrollar una aplicación Android para gestionar las operaciones de un vivero.
 
 ## 🛠️ Tecnologías
 
+- **Lenguaje:** Java
+- **Framework:** Android
+- **Versión mínima de Android:** 7.1 (API 25)
+- **Entorno de desarrollo:** Android Studio
+- **Emulado:** Pixel XL / Samsung S7 (pantalla: 2560 x 1440)
+
 ## 📄 Licencia
 
 Este proyecto es parte del trabajo académico de la Escuela Da Vinci y se comparte bajo **GNU-GPL V3**.
