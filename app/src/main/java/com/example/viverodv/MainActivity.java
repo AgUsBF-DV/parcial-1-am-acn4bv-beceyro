@@ -3,11 +3,15 @@ package com.example.viverodv;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextPlantType;
     private EditText editTextPlantPrice;
     private Button buttonAddProduct;
+    private LinearLayout productsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editTextPlantType = findViewById(R.id.editTextPlantType);
         editTextPlantPrice = findViewById(R.id.editTextPlantPrice);
         buttonAddProduct = findViewById(R.id.buttonAddProduct);
+        productsContainer = findViewById(R.id.products_container);
 
         // Listener del boton
         buttonAddProduct.setOnClickListener(new View.OnClickListener() {
@@ -52,12 +58,42 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         
-        // TODO: Agrega la tarjeta del producto a la lista
-        
-        // Limpia los campos y enfoca el primero
+        // Agregar la tarjeta del producto a la lista
+        addProductCard(name, type, price);
+
+        // Limpiar los campos y enfocar el primero
         editTextPlantName.setText("");
         editTextPlantType.setText("");
         editTextPlantPrice.setText("");
         editTextPlantName.requestFocus();
+    }
+
+    // Crear la tarjeta del producto
+    private void addProductCard(String name, String type, String price) {
+        // Crea un TextView
+        TextView productTextView = new TextView(this);
+        // Formatear la representacion de los datos del producto
+        String productInfo = getString(R.string.formato_txt_tarjeta, name, type, price);
+        // Insertar el texto en el TextView
+        productTextView.setText(productInfo);
+        // Dar formato a la tarjeta: fondo, color, alineacion
+        productTextView.setBackground(ContextCompat.getDrawable(this, R.drawable.card_background));
+        productTextView.setTextColor(ContextCompat.getColor(this, R.color.black));
+        productTextView.setGravity(Gravity.CENTER_VERTICAL);
+        
+        // Configurar objeto de parametros de layout
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        int margin = (int) getResources().getDimension(R.dimen.card_margin);
+        params.setMargins(0, 0, 0, margin);
+        // Setear los parametros a la tarjeta
+        productTextView.setLayoutParams(params);
+        // Configurar el padding
+        int padding = (int) getResources().getDimension(R.dimen.card_padding);
+        productTextView.setPadding(padding, padding, padding, padding);
+        // Agregar la tarjeta al inicio del contenedor
+        productsContainer.addView(productTextView, 0);
     }
 }

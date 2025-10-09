@@ -16,4 +16,5 @@
 
     <!-- Otros -->
     <string name="mje_error_campo_vacio">Por favor, complete todos los campos.</string>
+    <string name="formato_txt_tarjeta">Planta: %1$s\nTipo: %2$s\nPrecio: $%3$s</string>
 </resources>
