@@ -6,5 +6,5 @@
     <!-- Tarjeta de producto -->
     <dimen name="card_margin">8dp</dimen>
     <dimen name="card_padding">8dp</dimen>
-    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="card_radius">8dp</dimen>
 </resources>
