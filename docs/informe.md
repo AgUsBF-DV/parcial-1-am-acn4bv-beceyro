@@ -22,6 +22,6 @@ El layout base de la pantalla es un `ConstraintLayout`, que permite posicionar e
 - Un `LinearLayout` horizontal en el encabezado para alinear el logo y el nombre del vivero en una misma fila.
 - Un `LinearLayout` vertical para el área donde se agregan dinámicamente los productos (tarjetas).
 
-Los campos de texto están implementados con `TextView` para el nombre del vivero, el título y las tarjetas de producto (estas creadas desde Java). Por otro lado, los campos del formulario son del tipo `EditText`, cada uno con su correspondiente `inputType` según el dato que le corresponde.
+Los campos de texto están implementados con `TextView` para el nombre del vivero, el título y las tarjetas de producto (estas creadas desde Java). Por otro lado, los campos del formulario son del tipo `EditText`, cada uno con su correspondiente `inputType` según el dato que le corresponde. En el caso particular del campo *Tipo*, al ser valores pre-definidos (en este caso *hardcodeados* por ser un mockup), se usa un campo tipo `AutoCompleteTextView`.
 
 El formulario también incluye un botón que permite al usuario agregar un nuevo producto a la lista. Esto ocurre mediante un `setOnClickListener` que valida el formulario y, si es correcto, agrega un nuevo producto a la lista.
