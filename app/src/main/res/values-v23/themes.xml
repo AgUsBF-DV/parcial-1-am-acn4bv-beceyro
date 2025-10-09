@@ -2,8 +2,9 @@
 
     <style name="Theme.ViveroDV" parent="Base.Theme.ViveroDV">
         <!-- Transparent system bars for edge-to-edge. -->
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <!-- Barras superior/inferior del sistema -->
+        <item name="android:navigationBarColor">@color/emerald_800</item>
+        <item name="android:statusBarColor">@color/emerald_800</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
